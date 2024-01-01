@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:riverpod_architecture/core/enums/index.dart';
 
-void main() {
+void main() async {
+  Hive.init(HiveEnums.box.value);
+
   runApp(const MyApp());
 }
 
