@@ -19,16 +19,22 @@ class SplashView extends ConsumerWidget {
   }
 
   Widget _buildBody(SplashViewModel viewModel) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Center(
-          child: Text(
-            viewModel.getSplashData(),
+    return Center(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            viewModel.counter.toString(),
           ),
-        ),
-      ],
+          ElevatedButton(
+            onPressed: () {
+              viewModel.increment();
+            },
+            child: Text("Arttır"),
+          )
+        ],
+      ),
     );
   }
 }
