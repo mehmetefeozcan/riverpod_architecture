@@ -1,4 +1,4 @@
-import 'package:riverpod_architecture/presentation/widgets/index.dart';
+import 'package:riverpod_architecture/core/widgets/index.dart';
 import 'package:riverpod_architecture/core/constants/index.dart';
 import 'package:riverpod_architecture/core/enums/index.dart';
 import 'package:go_router/go_router.dart';
