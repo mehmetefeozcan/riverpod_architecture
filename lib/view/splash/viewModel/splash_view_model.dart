@@ -1,10 +1,14 @@
-import 'package:riverpod_architecture/core/base/index.dart';
+import 'package:flutter/material.dart';
 
-class SplashViewModel extends BaseViewModel {
+class SplashViewModel extends ChangeNotifier {
+  bool isLoading = false;
+
+  onChangeLoading() {
+    isLoading = !isLoading;
+    notifyListeners();
+  }
+
   int counter = 0;
-
-  @override
-  onInit() {}
 
   void increment() {
     counter++;

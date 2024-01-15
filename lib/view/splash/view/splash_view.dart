@@ -6,15 +6,29 @@ import 'package:flutter/material.dart';
 class SplashView extends ConsumerWidget {
   const SplashView({super.key});
 
+  void _onLifeCycleChanged(AppLifecycleState state) {
+    switch (state) {
+      case AppLifecycleState.detached:
+        print("detached");
+      case AppLifecycleState.resumed:
+        print("resumed");
+      case AppLifecycleState.inactive:
+        print("inactive");
+      case AppLifecycleState.hidden:
+        print("hidden");
+      case AppLifecycleState.paused:
+        print("paused");
+    }
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final viewModel = ref.watch(splashProvider);
 
     return BaseView(
       onInit: () {},
-      onPageBuilder: (context) => Scaffold(
-        body: _buildBody(viewModel),
-      ),
+      dispose: () {},
+      onPageBuilder: (context) => Scaffold(body: _buildBody(viewModel)),
     );
   }
 
